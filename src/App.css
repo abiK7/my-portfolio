@@ -1,0 +1,10 @@
+@import "tailwindcss";
+.bgShade{
+    background: #1c163b;
+}
+.highLightTextColor{
+    color: #754add;
+}
+.commonBgColor{
+    background-color: #754add;
+}

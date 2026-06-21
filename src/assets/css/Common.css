@@ -1,0 +1,22 @@
+.animateBorder {
+    background: linear-gradient(90deg, rgb(249 248 255 / 50%), rgba(176, 158, 255, 1), rgb(249 248 255 / 50%));
+    background-size: 200% 100%;
+    animation: animateBg 1s ease 1;
+    border-radius: 4px;
+}
+.animateBorder *{
+    background: transparent!important;
+}
+@keyframes animateBg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

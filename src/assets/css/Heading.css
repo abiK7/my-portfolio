@@ -1,0 +1,16 @@
+.heading{
+    position: relative;
+    float: left;
+    width:100%;
+    margin-bottom: 10px;
+}
+.heading::after{
+    border-radius: 2px;
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: #754add;
+    display: block;
+    bottom: -3px;
+}
