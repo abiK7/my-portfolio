@@ -28,6 +28,10 @@
         justify-content: center;
     }
 
+    .header.fixed {
+        z-index: 9999;
+    }
+
     .header nav {
         width: 100%;
         position: fixed;
@@ -35,6 +39,7 @@
         left: 0;
         background: #1c163b;
         height: 50px;
+        z-index: 9;
     }
 
     .header nav ul {
