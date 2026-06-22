@@ -19,7 +19,7 @@ function Container() {
         <>
             <Header focusedSection={focusedSection} setFocusedSection={setFocusedSection} eduRef={eduRef}  expRef={expRef} aboutRef={aboutRef} skillRef={skillRef} workRef={workRef} contactRef={contactRef}/>
             <Introduction contactRef={contactRef} />
-            <div className='px-10 pt-10 flex gap-5 float-left'>
+            <div className='columnDisplay px-10 pt-10 flex gap-5 float-left'>
                 <About aboutRef={aboutRef} focusedSection={focusedSection}/>
                 <Skills skillRef={skillRef} focusedSection={focusedSection} />
             </div>
@@ -29,7 +29,7 @@ function Container() {
                 <Education eduRef={eduRef} focusedSection={focusedSection}/>
             </div>
             <footer className='mt-10 bg-violet-400 text-sm float-left w-full py-2 text-center font-semibold cursor-default'>
-                Built with React.js and Tailwind CSS, showcasing component-based architecture, state management.
+                Built with React.js and Tailwind CSS, showcasing component-based architecture, state management, Responsive Design.
             </footer>
         </>
     )

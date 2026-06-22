@@ -1,10 +1,20 @@
 import resume from './assets/resume/Abinaya_Kesavan_Resume_New.pdf';
-import "./assets/css/Introduction.css"
+import "./assets/css/Introduction.css";
 import ProfileImage from './ProfileImage';
+import Tooltip from './Tooltip';
+import { useState } from "react";
 function Introduction({contactRef,focusedSection}) {
+    const[toolTipVisibility,setToolTipVisibiliy]=useState(false);
+    const copyToClipboard=(e)=>{
+        navigator.clipboard.writeText(e.target.innerText);
+        setToolTipVisibiliy(true);
+        setTimeout(function(){
+          setToolTipVisibiliy(false);  
+        },2000)
+    }
     return (
         <div className=' text-xs px-10 py-4 bgShade text-white'>
-            <section className='flex justify-between border-b border-gray-600'>
+            <section className=' intro flex justify-between border-b border-gray-600'>
                 <div className='w-96'>
                     <span className='text-xs text-gray-400 border px-4 py-1 rounded-full border-solid border-white'>Senior UI Developer</span> <span className='text-xs text-gray-400'>with 7+ years of experience</span>
                     <h1 className='mt-4 text-xl'>Hi, I'm <b className='highLightTextColor'>Abinaya</b> UI Developer</h1>
@@ -15,20 +25,21 @@ function Introduction({contactRef,focusedSection}) {
                     <ProfileImage />
                 </div>
             </section>
-            <section ref={contactRef} id="contactSection">
+            <section ref={contactRef} id="contactSection" className='contactList'>
+                <Tooltip text="Copied to clipboard" toolTipVisibility={toolTipVisibility}/>
                 <div className='flex justify-between py-5'>
                     <label>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#754add" className="size-4 mr-2 float-left">
                             <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                             <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                         </svg>
-                        abinayauidesigner@gmail.com
+                        <span onClick={(e)=>{copyToClipboard(e)}}>abinayauidesigner@gmail.com</span>
                     </label>
                     <label>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#754add" className="size-4 mr-2 float-left">
                             <path fillRule="evenodd" d="m3.855 7.286 1.067-.534a1 1 0 0 0 .542-1.046l-.44-2.858A1 1 0 0 0 4.036 2H3a1 1 0 0 0-1 1v2c0 .709.082 1.4.238 2.062a9.012 9.012 0 0 0 6.7 6.7A9.024 9.024 0 0 0 11 14h2a1 1 0 0 0 1-1v-1.036a1 1 0 0 0-.848-.988l-2.858-.44a1 1 0 0 0-1.046.542l-.534 1.067a7.52 7.52 0 0 1-4.86-4.859Z" clipRule="evenodd" />
                         </svg>
-                        +919994911237
+                        <span onClick={(e)=>{copyToClipboard(e)}}>+919994911237</span>
                     </label>
                     <label>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#754add" className="size-4 mr-2 float-left">

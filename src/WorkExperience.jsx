@@ -7,7 +7,7 @@ function WorkExperience({ expRef, focusedSection }) {
             id: 1,
             duration: "Apr 2022 - Feb 2026",
             title: " Senior Software Engineer - UI Developer",
-            subtitle: "Tecknodreams Software Consulting Pvt Ltd | Bangaluru(Remote)",
+            subtitle: "Tecknodreams Software Consulting Pvt Ltd | Bengaluru(Remote)",
             list: [
                 {
                     id: 1,
@@ -49,8 +49,8 @@ function WorkExperience({ expRef, focusedSection }) {
             <Heading title="Work Experience" />
             {experience.map((item) => (
                 <Listing focusedSection={focusedSection} key={item.id} duration={item.duration} title={item.title} subtitle={item.subtitle}>
-                    <ul>
-                        {item.list.map((listPoint) => (<li key={listPoint.id}>{listPoint.point}</li>))}
+                    <ul className='text-justify pt-1.5'>
+                        {item.list.map((listPoint) => (<li key={listPoint.id} className="list-inside list-disc">{listPoint.point}</li>))}
                     </ul>
                 </Listing>
             ))}
